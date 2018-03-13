@@ -1,0 +1,15 @@
+.user {
+  width: 50%;
+  position: absolute;
+}
+
+td {
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  padding-top: 3px;
+}
+
+form.listform label.title {
+  width: 150px;
+}

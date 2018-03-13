@@ -1,0 +1,107 @@
+.mssu {
+  text-align: center;
+  vertical-align: middle;
+  
+  font-size: 28pt;
+  font-family: 黑体;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.mssu > span {
+  padding-top: 28pt;
+  padding-bottom: 28pt;
+  border-style: solid;
+  border-width: 1px;
+  
+  position: relative;
+  top: 43%;
+}
+
+.mssu > span.admin {
+  padding-left: 28pt;
+  padding-right: 28pt;
+  
+  border-color: blue;
+  
+  color: blue;
+  
+  margin-right: 56pt;
+}
+
+.mssu > span.admin.hover {
+  padding-left: 28pt;
+  padding-right: 28pt;
+  
+  border-radius: 5px;
+  border-color: white;
+  background-color: blue;
+  
+  
+  box-shadow: 3px 3px 3px DarkGray;
+  color: white;
+  cursor: pointer;
+  
+  top: 42.7%;
+  margin-right: 56pt;
+}
+
+.mssu > span.admin.focus {
+  padding-left: 28pt;
+  padding-right: 28pt;
+  
+  border-width: 2px;
+  border-color: MidnightBlue;
+  background-color: CornflowerBlue;
+  
+  color: GhostWhite;
+  text-shadow: 1px 1px 1px white;
+  cursor: pointer;
+  
+  top: 43%;
+  margin-right: 55pt;
+}
+
+.mssu > span.examinee {
+  padding-left: 42pt;
+  padding-right: 42pt;
+  
+  
+  border-color: green;
+  
+  color: green;
+}
+
+
+.mssu > span.examinee.hover {
+  padding-left: 42pt;
+  padding-right: 42pt;
+  
+  border-radius: 5px;
+  border-color: white;
+  background-color: green;
+  
+  
+  box-shadow: 3px 3px 3px DarkGray;
+  color: white;
+  cursor: pointer;
+  
+  top: 42.7%;
+}
+
+.mssu > span.examinee.focus {
+  padding-left: 42pt;
+  padding-right: 42pt;
+  
+  border-width: 2px;
+  border-color: DarkGreen;
+  background-color: DarkSeaGreen;
+  
+  color: GhostWhite;
+  text-shadow: 1px 1px 1px white;
+  cursor: pointer;
+  
+  top: 43%;
+  margin-left: -2px;
+}
