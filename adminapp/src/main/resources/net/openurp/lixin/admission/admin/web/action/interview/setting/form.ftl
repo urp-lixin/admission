@@ -7,7 +7,7 @@
     [@b.validity]
       $("[name='batch.name']", document.batchForm).require().assert(function() {
         var isOk = false;
-        
+
         $.ajax({
           "type": "POST",
           "url": "${b.url("!checkAjax")}",
@@ -21,11 +21,11 @@
             isOk = data.isOk;
           }
         });
-        
+
         return isOk;
       }, "名称已存在！！！");
     [/@]
-    [@b.startend label="使用时间段" name="batch.beginAt,batch.endAt" start=(batch.beginAt)! 
+    [@b.startend label="使用时间段" name="batch.beginAt,batch.endAt" start=(batch.beginAt)!
         end=(batch.endAt)! required="true,true" format="yyyy-MM-dd HH:mm:ss" /]
     [@b.formfoot]
       <input type="hidden" name="batch.id" value="${batch.persisted?string(batch.id, "")}"/>

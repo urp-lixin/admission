@@ -8,7 +8,7 @@
     [@b.validity]
       $("[name='examinee.idNumber']", document.examineeForm).require().assert(function() {
         var isOk = false;
-        
+
         $.ajax({
           "type": "POST",
           "url": "${b.url("!checkAjax")}",
@@ -22,7 +22,7 @@
             isOk = data.isOk;
           }
         });
-        
+
         return isOk;
       }, "名称已存在！！！");
     [/@]

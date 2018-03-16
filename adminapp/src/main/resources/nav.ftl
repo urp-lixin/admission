@@ -1,4 +1,4 @@
-  
+
 [#macro displayFrame org appName mainHref="" fixed=true]
 <nav style="margin-bottom: 0px;" role="navigation" class="navbar navbar-default">
    <div class="navbar-header">

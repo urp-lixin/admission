@@ -16,7 +16,7 @@
       $("[name='session.maximum']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
         return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
       }, "不能低于已选人数！！！");
-      
+
       $("[name='session.selected']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
         return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
       }, "不能高于人数上限！！！");

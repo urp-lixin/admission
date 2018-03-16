@@ -26,7 +26,7 @@
       "title": "考生信息",
       "entry": "/base/examinee",
       "code": "03"
-    }, 
+    },
   ];
 </script>
 [@b.foot/]

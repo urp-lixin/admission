@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="${base}/static/bootstrap/css/bootstrap-theme.min.css"/>
   <link rel="stylesheet" href="${base}/static/beangle/css/beangle-ui.css"/>
   <script src="${base}/static/bootstrap/bootstrap.min.js"></script>
-  
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>

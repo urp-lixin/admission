@@ -1,8 +1,8 @@
 [@b.head title = "上海立信会计金融学院春季招生面试时段选择系统"/]
       <link href="${base}/static/css/user.css" rel="stylesheet" type="text/css" />
       [@b.messages/]
-      [@b.form title="春季招生面试时段选择" name="interviewChoiceForm" action="!save" 
-      	theme="list" onsubmit="return confirmLast()"]
+      [@b.form title="春季招生面试时段选择" name="interviewChoiceForm" action="!save"
+        theme="list" onsubmit="return confirmLast()"]
         <table class="infoTable">
           <tr>
             <td class="title" width="20%">身份证号：</td>
