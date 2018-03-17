@@ -1,3 +1,21 @@
+/*
+ * OpenURP, Agile University Resource Planning Solution.
+ *
+ * Copyright © 2005, The OpenURP Software.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package net.openurp.lixin.admission.admin.web.action.interview
 
 import org.beangle.commons.lang.Strings
@@ -23,11 +41,11 @@ class SettingAction extends MSSUEntitySupport[Setting] with ImportDataSupport[Se
     put("isOk", entityDao.search(builder).isEmpty)
     forward()
   }
-  
+
   def importTemplate(): View = {
     Stream(getClass.getResourceAsStream("/template/excel/batchImportTemplate.xls"), "application/vnd.ms-excel", "批次导入模板.xls")
   }
-  
+
   protected override def importerListeners(): List[_ <: TransferListener] = {
     List(new BatchImporterListener(entityDao))
   }

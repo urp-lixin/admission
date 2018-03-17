@@ -1,4 +1,5 @@
 [@b.head title = "上海立信会计金融学院春季招生面试成绩查询系统"/]
+[#if examGrade??]
 <div class="container">
 <h3>上海立信会计金融学院 春季招生成绩</h3>
 <hr>
@@ -25,4 +26,7 @@
   [/#list]
 </dl>
 </div>
+[#else]
+  找不到您的春招成绩.
+[/#if]
 [@b.foot/]

@@ -12,7 +12,7 @@
       var form = document.sessionForm;
       function checkAjax() {
         var isOk = false;
-        
+
         $.ajax({
           "type": "POST",
           "url": "${b.url("!checkAjax")}",
@@ -27,14 +27,14 @@
             isOk = data.isOk;
           }
         });
-        
+
         return isOk;
       }
-      
+
       $("[name='session.batch.id']", form).require().assert(function() {
         return checkAjax();
       }, "当前面试安排已存在！！！");
-      
+
       $("[name='session.major.id']", form).require().assert(function() {
         return checkAjax();
       }, "当前面试安排已存在！！！");
@@ -46,7 +46,7 @@
       $("[name='session.maximum']", form).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
         return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
       }, "不能低于已选人数！！！");
-      
+
       $("[name='session.selected']", form).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
         return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
       }, "不能高于人数上限！！！");
