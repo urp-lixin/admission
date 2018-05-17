@@ -10,7 +10,7 @@
   <dd>${examGrade.examinee.name}</dd>
   <dt>准考证号:</dt>
   <dd>${examGrade.examinee.code}</dd>
-  <dt>专业:</dt>
+  <dt>报考专业:</dt>
   <dd>${examGrade.examinee.major.name}</dd>
 
   <dt>总成绩:</dt>
