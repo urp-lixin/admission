@@ -26,7 +26,7 @@ import org.beangle.webmvc.api.annotation.mapping
 import org.beangle.webmvc.api.view.View
 
 import net.openurp.lixin.admission.base.model.Examinee
-import net.openurp.lixin.admission.interview.model.{ Choice, Session }
+import net.openurp.lixin.admission.interview.model.{ InterviewChoice, InterviewSession }
 import net.openurp.lixin.admission.web.MSSUSupport
 
 /**
@@ -47,8 +47,8 @@ class ChoiceAction extends MSSUSupport with ServletSupport {
     if (examinees.isEmpty) None else Some(examinees.head)
   }
 
-  private def getChoice(examinee: Examinee): Option[Choice] = {
-    val choices = entityDao.findBy(classOf[Choice], "examinee", List(examinee))
+  private def getChoice(examinee: Examinee): Option[InterviewChoice] = {
+    val choices = entityDao.findBy(classOf[InterviewChoice], "examinee", List(examinee))
     if (choices.isEmpty) None else Some(choices.head)
   }
 
@@ -67,7 +67,7 @@ class ChoiceAction extends MSSUSupport with ServletSupport {
             put("examinee", examinee)
             forward("error")
           } else {
-            val builder2 = OqlBuilder.from(classOf[Session], "Session")
+            val builder2 = OqlBuilder.from(classOf[InterviewSession], "Session")
             builder2.where("Session.batch = :batch", examinee.batch)
             builder2.where("Session.major = :major", examinee.major)
             builder2.where("Session.selected < Session.maximum")
@@ -92,13 +92,13 @@ class ChoiceAction extends MSSUSupport with ServletSupport {
     getChoice(examinee) match {
       case None =>
         val sessionId = getLong("sessionId").get
-        val rs = entityDao.executeUpdate("update " + classOf[Session].getName +
+        val rs = entityDao.executeUpdate("update " + classOf[InterviewSession].getName +
           " set selected = selected +1 where selected < maximum and id = ?1 ", sessionId)
         var msg: String = "";
         if (rs > 0) {
-          val choice = new Choice
+          val choice = new InterviewChoice
           choice.examinee = examinee
-          choice.session = entityDao.get(classOf[Session], sessionId)
+          choice.session = entityDao.get(classOf[InterviewSession], sessionId)
           choice.updatedAt = Instant.now
           entityDao.saveOrUpdate(choice)
           msg = "signup.ok"

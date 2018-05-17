@@ -16,13 +16,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.interview.model
+package net.openurp.lixin.admission.grade.model
 
 import org.beangle.data.model.LongId
-import org.beangle.data.model.annotation.code
-import org.beangle.data.model.pojo.Coded
-import org.beangle.data.model.pojo.Named
 
-class Subject extends LongId with Coded with Named {
+import net.openurp.lixin.admission.base.model.Examinee
+
+/**
+ * 考生总成绩
+ */
+class ExamGrade extends LongId {
+
+  var examinee: Examinee = _
+
+  var score: Float = _
 
 }

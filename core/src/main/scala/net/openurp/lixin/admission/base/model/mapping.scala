@@ -33,8 +33,6 @@ class DefaultMapping extends MappingModule {
 
     bind[Examinee]
 
-    bind[ExamGrade]
-
     bind[Major]
   }
 }

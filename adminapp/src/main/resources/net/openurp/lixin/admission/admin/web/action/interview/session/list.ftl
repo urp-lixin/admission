@@ -1,5 +1,5 @@
 [@b.head title = "面试时段选择系统－管理员"/]
-  [@b.grid items=sessions var="session"]
+  [@b.grid items=interviewSessions var="session"]
     [@b.gridbar]
       bar.addItem("${b.text("action.new")}", action.add());
       bar.addItem("${b.text("action.modify")}", action.edit());

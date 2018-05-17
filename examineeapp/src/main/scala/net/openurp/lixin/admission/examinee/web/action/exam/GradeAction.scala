@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.examinee.web.action.interview
+package net.openurp.lixin.admission.examinee.web.action.exam
 import org.beangle.data.dao.OqlBuilder
 import org.beangle.webmvc.api.action.ServletSupport
 import org.beangle.webmvc.api.annotation.mapping
@@ -26,6 +26,7 @@ import net.openurp.lixin.admission.base.model.Examinee
 import net.openurp.lixin.admission.grade.model.SubjectGrade
 import net.openurp.lixin.admission.web.MSSUSupport
 import net.openurp.lixin.admission.interview.model.InterviewGrade
+import net.openurp.lixin.admission.grade.model.ExamGrade
 
 /**
  * @author zhouqi 2018年2月2日
@@ -52,7 +53,7 @@ class GradeAction extends MSSUSupport with ServletSupport {
     } else {
       val examinee = examinees.head
       val examGrades = entityDao.search(
-        OqlBuilder.from(classOf[InterviewGrade], "eg").where("eg.examinee=:me", examinee))
+        OqlBuilder.from(classOf[ExamGrade], "eg").where("eg.examinee=:me", examinee))
 
       val subjectGrades = entityDao.search(
         OqlBuilder.from(classOf[SubjectGrade], "sg").where("sg.examinee=:me", examinee))

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <orm>
   <mapping class="net.openurp.lixin.admission.base.model.DefaultMapping" />
+  <mapping class="net.openurp.lixin.admission.grade.model.DefaultMapping" />
   <mapping class="net.openurp.lixin.admission.interview.model.DefaultMapping" />
   <naming>
-    <profile package="net.openurp.lixin.admission.base.model" pluralize="true" schema="base"/>
-    <profile package="net.openurp.lixin.admission.interview.model" pluralize="true" schema="interview"/>
+    <profile package="net.openurp.lixin.admission.base.model" pluralize="true" schema="admission"/>
+    <profile package="net.openurp.lixin.admission.interview.model" pluralize="true" schema="admission"/>
+    <profile package="net.openurp.lixin.admission.grade.model" pluralize="true" schema="admission"/>
   </naming>
 </orm>

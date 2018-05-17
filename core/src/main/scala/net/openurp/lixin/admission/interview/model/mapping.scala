@@ -29,14 +29,12 @@ class DefaultMapping extends MappingModule {
   override def binding(): Unit = {
     defaultIdGenerator("auto_increment")
 
-    bind[Session]
+    bind[InterviewSession]
 
-    bind[Choice]
+    bind[InterviewChoice]
 
-    bind[Grade]
+    bind[InterviewGrade]
 
-    bind[Subject]
-
-    bind[Setting]
+    bind[InterviewSetting]
   }
 }

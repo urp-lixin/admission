@@ -16,12 +16,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.examinee.web
+package net.openurp.lixin.admission.examinee.web.action.interview
 
 import org.beangle.cdi.bind.BindModule
 import org.beangle.commons.text.i18n.DefaultTextBundleRegistry
-import net.openurp.lixin.admission.examinee.web.action.interview.GradeAction
-import net.openurp.lixin.admission.examinee.web.action.interview.ChoiceAction
 
 class DefaultWebModule extends BindModule {
 

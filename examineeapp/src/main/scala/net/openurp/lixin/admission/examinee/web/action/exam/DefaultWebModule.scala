@@ -16,28 +16,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.interview.model
+package net.openurp.lixin.admission.examinee.web.action.exam
 
-import java.time.Instant
-import org.beangle.data.model.LongId
-import net.openurp.lixin.admission.base.model.Major
-import net.openurp.lixin.admission.base.model.Batch
+import org.beangle.cdi.bind.BindModule
+import org.beangle.commons.text.i18n.DefaultTextBundleRegistry
 
-/**
- * @author zhouqi 2018年2月2日
- *
- */
-class Session extends LongId {
+class DefaultWebModule extends BindModule {
 
-  var batch: Batch = _
-
-  var major: Major = _
-
-  var beginAt: Instant = _
-
-  var endAt: Instant = _
-
-  var maximum: Int = _
-
-  var selected: Int = _
+  protected override def binding(): Unit = {
+    bind(classOf[GradeAction])
+  }
 }

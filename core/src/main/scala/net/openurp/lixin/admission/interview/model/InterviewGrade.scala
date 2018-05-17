@@ -16,21 +16,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.admin.web.action.interview
+package net.openurp.lixin.admission.interview.model
 
-import net.openurp.lixin.admission.base.model.{ Batch, Major }
-import net.openurp.lixin.admission.interview.model.InterviewSession
-import net.openurp.lixin.admission.web.MSSUEntitySupport
+import org.beangle.data.model.LongId
+import org.beangle.commons.collection.Collections
+import scala.collection.mutable.Buffer
+import net.openurp.lixin.admission.base.model.Examinee
 
-/**
- * @author zhouqi 2018年2月2日
- *
- */
-class SessionAction extends MSSUEntitySupport[InterviewSession] {
+class InterviewGrade extends LongId {
 
-  protected override def indexSetting(): Unit = {
-    put("majors", entityDao.getAll(classOf[Major]))
-    put("batches", entityDao.getAll(classOf[Batch]))
-  }
+  var examinee: Examinee = _
+
+  var totalScore: Float = _
+
+  var interviewScore: Float = _
+
+  var cultureScore: Float = _
+
+  var rank: Int = _
 
 }

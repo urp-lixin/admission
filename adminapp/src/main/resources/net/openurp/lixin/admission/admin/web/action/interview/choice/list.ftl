@@ -1,5 +1,5 @@
 [@b.head title = "面试时段选择系统－管理员"/]
-  [@b.grid items=choices var="choice"]
+  [@b.grid items=interviewChoices var="choice"]
     [@b.gridbar]
       bar.addItem("${b.text("action.export")}", action.exportData());
     [/@]

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <cdi>
   <container name="web">
-    <module class="net.openurp.lixin.admission.examinee.web.DefaultWebModule"/>
+    <module class="net.openurp.lixin.admission.examinee.web.action.interview.DefaultWebModule"/>
+    <module class="net.openurp.lixin.admission.examinee.web.action.exam.DefaultWebModule"/>
   </container>
 </cdi>

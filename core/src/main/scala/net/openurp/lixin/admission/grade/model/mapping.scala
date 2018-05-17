@@ -16,21 +16,22 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.admin.web.action.interview
+package net.openurp.lixin.admission.grade.model
 
-import net.openurp.lixin.admission.base.model.{ Batch, Major }
-import net.openurp.lixin.admission.interview.model.InterviewSession
-import net.openurp.lixin.admission.web.MSSUEntitySupport
+import org.beangle.data.orm.MappingModule
 
 /**
- * @author zhouqi 2018年2月2日
- *
  */
-class SessionAction extends MSSUEntitySupport[InterviewSession] {
+class DefaultMapping extends MappingModule {
 
-  protected override def indexSetting(): Unit = {
-    put("majors", entityDao.getAll(classOf[Major]))
-    put("batches", entityDao.getAll(classOf[Batch]))
+  override def binding(): Unit = {
+    defaultIdGenerator("auto_increment")
+
+    bind[ExamGrade]
+
+    bind[SubjectGrade]
+
+    bind[Subject]
+
   }
-
 }

@@ -16,22 +16,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.admission.base.model
+package net.openurp.lixin.admission.grade.model
 
 import org.beangle.data.model.LongId
-import org.beangle.commons.collection.Collections
-import scala.collection.mutable.Buffer
+import net.openurp.lixin.admission.base.model.Examinee
 
-class ExamGrade extends LongId {
+/**
+ * 科目成绩
+ */
+class SubjectGrade extends LongId {
 
   var examinee: Examinee = _
 
-  var totalScore: Float = _
+  var score: Float = _
 
-  var interviewScore: Float = _
-
-  var cultureScore: Float = _
-
-  var rank: Int = _
-
+  var subject: Subject = _
 }

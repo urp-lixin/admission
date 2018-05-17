@@ -18,12 +18,27 @@
  */
 package net.openurp.lixin.admission.interview.model
 
-import org.beangle.data.model.LongId
-import org.beangle.data.model.pojo.Named
-import org.beangle.data.model.pojo.TemporalAt
-import net.openurp.lixin.admission.base.model.Batch
+import java.time.Instant
 
-class Setting extends LongId with Named with TemporalAt {
+import org.beangle.data.model.LongId
+
+import net.openurp.lixin.admission.base.model.{ Batch, Major }
+
+/**
+ * @author zhouqi 2018年2月2日
+ *
+ */
+class InterviewSession extends LongId {
 
   var batch: Batch = _
+
+  var major: Major = _
+
+  var beginAt: Instant = _
+
+  var endAt: Instant = _
+
+  var maximum: Int = _
+
+  var selected: Int = _
 }

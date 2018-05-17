@@ -19,13 +19,11 @@
 package net.openurp.lixin.admission.interview.model
 
 import org.beangle.data.model.LongId
-import net.openurp.lixin.admission.base.model.Examinee
+import org.beangle.data.model.pojo.{ Named, TemporalAt }
 
-class Grade extends LongId {
+import net.openurp.lixin.admission.base.model.Batch
 
-  var examinee: Examinee = _
+class InterviewSetting extends LongId with Named with TemporalAt {
 
-  var score: Float = _
-
-  var subject: Subject = _
+  var batch: Batch = _
 }

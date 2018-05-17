@@ -21,20 +21,19 @@ package net.openurp.lixin.admission.admin.web.action.interview
 import org.beangle.commons.lang.Strings
 import org.beangle.data.dao.OqlBuilder
 import org.beangle.data.transfer.TransferListener
-import org.beangle.data.transfer.listener.ForeignerListener
 import org.beangle.webmvc.api.annotation.param
 import org.beangle.webmvc.api.view.{ Stream, View }
-import net.openurp.lixin.admission.admin.web.listener.BatchImporterListener
-import net.openurp.lixin.admission.web.MSSUEntitySupport
-import net.openurp.lixin.admission.web.ImportDataSupport
-import net.openurp.lixin.admission.interview.model.Setting
 
-class SettingAction extends MSSUEntitySupport[Setting] with ImportDataSupport[Setting] {
+import net.openurp.lixin.admission.admin.web.listener.BatchImporterListener
+import net.openurp.lixin.admission.interview.model.InterviewSetting
+import net.openurp.lixin.admission.web.{ ImportDataSupport, MSSUEntitySupport }
+
+class SettingAction extends MSSUEntitySupport[InterviewSetting] with ImportDataSupport[InterviewSetting] {
 
   def checkAjax(@param("id") id: String, @param("name") name: String): View = {
     val builder = OqlBuilder.from(entityName, simpleEntityName)
     Strings.isBlank(id) match {
-      case true  =>
+      case true =>
       case false => builder.where(simpleEntityName + ".id != :id", id.toLong)
     }
     builder.where(simpleEntityName + ".name = :name", name.trim)

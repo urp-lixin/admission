@@ -6,23 +6,23 @@
   [/@]
   [@b.form name="sessionForm" action="!save" target="sessions" theme="list"]
     [#assign elementSTYLE = "width: 200px"/]
-    [@b.select label="批次" name="session.batch.id" items=batches?sort_by(["name"]) value=(session.batch.id)! required="true" style=elementSTYLE comment="（一个批次、一个专业只能出现一次）"/]
-    [@b.select label="专业" name="session.major.id" items=majors?sort_by(["name"]) value=(session.major.id)! required="true" style=elementSTYLE/]
-    [@b.startend label="面试时间" name="session.beginAt,session.endAt" start=(session.beginAt?string("yyyy-MM-dd HH:mm"))! end=(session.endAt?string("yyyy-MM-dd HH:mm"))! format="yyyy-MM-dd HH:mm" required="true,true" readOnly="readOnly" style=elementSTYLE/]
-    [@b.textfield label="人数上限" name="session.maximum" value=(session.maximum)! required="true" maxlength="5" style=elementSTYLE/]
-    [@b.textfield label="已选人数" name="session.selected" value=(session.selected)! required="true" maxlength="5" style=elementSTYLE/]
+    [@b.select label="批次" name="interviewSession.batch.id" items=batches?sort_by(["name"]) value=(interviewSession.batch.id)! required="true" style=elementSTYLE comment="（一个批次、一个专业只能出现一次）"/]
+    [@b.select label="专业" name="interviewSession.major.id" items=majors?sort_by(["name"]) value=(interviewSession.major.id)! required="true" style=elementSTYLE/]
+    [@b.startend label="面试时间" name="interviewSession.beginAt,interviewSession.endAt" start=(interviewSession.beginAt?string("yyyy-MM-dd HH:mm"))! end=(interviewSession.endAt?string("yyyy-MM-dd HH:mm"))! format="yyyy-MM-dd HH:mm" required="true,true" readOnly="readOnly" style=elementSTYLE/]
+    [@b.textfield label="人数上限" name="interviewSession.maximum" value=(interviewSession.maximum)! required="true" maxlength="5" style=elementSTYLE/]
+    [@b.textfield label="已选人数" name="interviewSession.selected" value=(interviewSession.selected)! required="true" maxlength="5" style=elementSTYLE/]
     [@b.validity]
       var form=document.sessionForm;
-      $("[name='session.maximum']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
-        return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
+      $("[name='interviewSession.maximum']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
+        return parseInt(form["interviewSession.maximum"].value) >= parseInt(form["interviewSession.selected"].value);
       }, "不能低于已选人数！！！");
 
-      $("[name='session.selected']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
-        return parseInt(form["session.maximum"].value) >= parseInt(form["session.selected"].value);
+      $("[name='interviewSession.selected']", document.sessionForm).require().match("integer").greaterThanOrEqualTo(0).assert(function() {
+        return parseInt(form["interviewSession.maximum"].value) >= parseInt(form["interviewSession.selected"].value);
       }, "不能高于人数上限！！！");
     [/@]
     [@b.formfoot]
-      <input type="hidden" name="session.id" value="${session.persisted?string(session.id, "")}"/>
+      <input type="hidden" name="interviewSession.id" value="${interviewSession.persisted?string(interviewSession.id, "")}"/>
       [@b.submit value="提交"/]
     [/@]
   [/@]
