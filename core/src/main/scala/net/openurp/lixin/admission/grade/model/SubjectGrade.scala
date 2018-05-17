@@ -31,4 +31,6 @@ class SubjectGrade extends LongId {
   var score: Float = _
 
   var subject: Subject = _
+
+  var published: Boolean = _
 }

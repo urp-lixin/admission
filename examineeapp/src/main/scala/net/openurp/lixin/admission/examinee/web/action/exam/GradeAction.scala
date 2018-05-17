@@ -53,10 +53,11 @@ class GradeAction extends MSSUSupport with ServletSupport {
     } else {
       val examinee = examinees.head
       val examGrades = entityDao.search(
-        OqlBuilder.from(classOf[ExamGrade], "eg").where("eg.examinee=:me", examinee))
+        OqlBuilder.from(classOf[ExamGrade], "eg")
+          .where("eg.examinee=:me and eg.published=true", examinee))
 
       val subjectGrades = entityDao.search(
-        OqlBuilder.from(classOf[SubjectGrade], "sg").where("sg.examinee=:me", examinee))
+        OqlBuilder.from(classOf[SubjectGrade], "sg").where("sg.examinee=:me and sg.published=true", examinee))
 
       put("examinee", examinee)
       put("subjectGrades", subjectGrades)

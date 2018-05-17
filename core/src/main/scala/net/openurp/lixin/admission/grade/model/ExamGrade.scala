@@ -31,4 +31,5 @@ class ExamGrade extends LongId {
 
   var score: Float = _
 
+  var published: Boolean = _
 }
