@@ -4,7 +4,7 @@
       bg.form.submit(document.searchForm, "${b.url("!search")}", "sessions");
     }, "backward.png");
   [/@]
-  [@b.form name="sessionForm" action="!save" target="sessions" theme="list"]
+  [@b.form name="sessionForm" action=b.rest.save(interviewSession) target="sessions" theme="list"]
     [#assign elementSTYLE = "width: 200px"/]
     [@b.select label="批次" name="interviewSession.batch.id" items=batches?sort_by(["name"]) value=(interviewSession.batch.id)! required="true" style=elementSTYLE comment="（一个批次、一个专业只能出现一次）"/]
     [@b.select label="专业" name="interviewSession.major.id" items=majors?sort_by(["name"]) value=(interviewSession.major.id)! required="true" style=elementSTYLE/]
@@ -22,7 +22,6 @@
       }, "不能高于人数上限！！！");
     [/@]
     [@b.formfoot]
-      <input type="hidden" name="interviewSession.id" value="${interviewSession.persisted?string(interviewSession.id, "")}"/>
       [@b.submit value="提交"/]
     [/@]
   [/@]
