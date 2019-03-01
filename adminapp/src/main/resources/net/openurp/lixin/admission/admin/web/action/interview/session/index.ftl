@@ -4,8 +4,8 @@
     <tr>
       <td class="index_view">
         [@b.form title="ui.searchForm" name="searchForm" action="!search" target="sessions" theme="search"]
-          [@b.select label="批次" name="session.batch.id" items=batches?sort_by(["name"]) empty="..."/]
-          [@b.select label="专业" name="session.major.id" items=majors?sort_by(["name"]) empty="..."/]
+          [@b.select label="批次" name="interviewSession.batch.id" items=batches?sort_by(["name"]) empty="..."/]
+          [@b.select label="专业" name="interviewSession.major.id" items=majors?sort_by(["name"]) empty="..."/]
         [/@]
       </td>
       <td class="index_content">[@b.div id="sessions"/]</td>

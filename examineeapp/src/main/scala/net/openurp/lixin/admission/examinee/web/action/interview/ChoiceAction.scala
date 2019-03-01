@@ -26,6 +26,7 @@ import org.beangle.webmvc.api.annotation.mapping
 import org.beangle.webmvc.api.view.View
 
 import net.openurp.lixin.admission.base.model.Examinee
+import net.openurp.lixin.admission.base.model.Batch
 import net.openurp.lixin.admission.interview.model.{ InterviewChoice, InterviewSession }
 import net.openurp.lixin.admission.web.MSSUSupport
 
@@ -34,6 +35,12 @@ import net.openurp.lixin.admission.web.MSSUSupport
  *
  */
 class ChoiceAction extends MSSUSupport with ServletSupport {
+
+  protected override def indexSetting(): Unit = {
+    val builder = OqlBuilder.from(classOf[Batch], "batch")
+    builder.where("batch.endAt >= :now", Instant.now)
+    put("batches", entityDao.search(builder))
+  }
 
   private def getExaminee(code: Option[String], name: Option[String],
     idNumber: Option[String]): Option[Examinee] = {
