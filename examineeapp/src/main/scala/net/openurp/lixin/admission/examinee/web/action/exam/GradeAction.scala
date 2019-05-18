@@ -1,40 +1,46 @@
 /*
  * OpenURP, Agile University Resource Planning Solution.
  *
- * Copyright © 2005, The OpenURP Software.
+ * Copyright © 2014, The OpenURP Software.
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful.
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
+ * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
+ * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package net.openurp.lixin.admission.examinee.web.action.exam
+
+import java.time.Instant
+
+import net.openurp.lixin.admission.base.model.{Batch, Examinee}
+import net.openurp.lixin.admission.grade.model.{ExamGrade, SubjectGrade}
+import net.openurp.lixin.admission.web.MSSUSupport
 import org.beangle.data.dao.OqlBuilder
 import org.beangle.webmvc.api.action.ServletSupport
 import org.beangle.webmvc.api.annotation.mapping
 import org.beangle.webmvc.api.view.View
 
-import net.openurp.lixin.admission.base.model.Examinee
-import net.openurp.lixin.admission.grade.model.SubjectGrade
-import net.openurp.lixin.admission.web.MSSUSupport
-import net.openurp.lixin.admission.interview.model.InterviewGrade
-import net.openurp.lixin.admission.grade.model.ExamGrade
-
 /**
- * @author zhouqi 2018年2月2日
- */
+  * @author zhouqi 2018年2月2日
+  */
 class GradeAction extends MSSUSupport with ServletSupport {
 
+  protected override def indexSetting(): Unit = {
+    val builder = OqlBuilder.from(classOf[Batch], "batch")
+    builder.where("batch.endAt >= :now", Instant.now)
+    put("batches", entityDao.search(builder))
+  }
+
   private def getExaminee(code: Option[String], name: Option[String],
-    idNumber: Option[String]): Option[Examinee] = {
+                          idNumber: Option[String]): Option[Examinee] = {
     if (code == None || name == None || idNumber == None) return None
 
     val builder1 = OqlBuilder.from(classOf[Examinee], "examinee")

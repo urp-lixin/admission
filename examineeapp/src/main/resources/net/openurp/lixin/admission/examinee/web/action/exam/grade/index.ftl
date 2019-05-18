@@ -2,7 +2,11 @@
   <link href="${base}/static/css/user.css" rel="stylesheet" type="text/css" />
   <div class="container">
      <div class="user">
-    [@b.form title="上海立信会计金融学院 专升本考试成绩查询系统" name="interviewChoiceForm" action="!search" theme="list"]
+          [#assign title="上海立信会计金融学院 考试成绩查询系统"/]
+          [#list batches as batch]
+            [#assign title="上海立信会计金融学院 "+batch.name+"考试成绩查询系统"/]
+          [/#list]
+    [@b.form title=title name="interviewChoiceForm" action="!search" theme="list"]
       [#assign elementSTYLE = "width: 200px"/]
       [@b.textfield label="准考证号" name="code" placeholder="准考证号" required="true" maxlength="50" style=elementSTYLE/]
       [@b.textfield label="姓名" name="name" placeholder="姓名" required="true" maxlength="50" style=elementSTYLE/]
