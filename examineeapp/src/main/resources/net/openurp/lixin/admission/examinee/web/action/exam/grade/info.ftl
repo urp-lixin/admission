@@ -1,7 +1,7 @@
 [@b.head title = "上海立信会计金融学院专升本考试成绩查询系统"/]
 [#if examGrade??]
 <div class="container">
-<h3>上海立信会计金融学院 专升本考试成绩</h3>
+<h3>上海立信会计金融学院  ${examGrade.examinee.batch.name}考试成绩</h3>
 <hr>
  <dl class="dl-horizontal">
   <dt>身份证号:</dt>
