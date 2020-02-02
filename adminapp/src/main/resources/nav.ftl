@@ -5,7 +5,10 @@
        <a onclick="return bg.Go(this,null)" style="height: 20px;" class="navbar-brand" href="${base}/admin/">${org.shortName}</a>
    </div>
    <div>
-     <ul class="nav navbar-nav" style="height: 50px;" id="app_nav_bar"></ul>
+     <ul class="nav navbar-nav" style="height: 50px;" id="app_nav_bar">
+       <li [#if this_url?starts_with(base+"/base")]class="active"[/#if]><a href="${base}/base/" target="_top">基础信息</a></li>
+       <li [#if this_url?starts_with(base+"/interview")]class="active"[/#if]><a href="${base}/interview/" target="_top">面试管理</a></li>
+     </ul>
      <ul class="nav navbar-nav navbar-right" style="height: 35px; padding-top: 15px;">
        <li>[#nested/]</li>
        <li>

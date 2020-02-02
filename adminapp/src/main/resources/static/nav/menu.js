@@ -1,8 +1,8 @@
-/* 
+/*
 Simple JQuery menu.
 HTML structure to use:
 
-Notes: 
+Notes:
 
 Each menu MUST have a class 'menu' set. If the menu doesn't have this, the JS won't make it dynamic
 If you want a panel to be expanded at page load, give the containing LI element the classname 'expand'.
@@ -43,11 +43,11 @@ email: marco@i-marco.nl
 Free to use any way you like.
 */
 
-		
 
 
 
-jQuery.fn.initMenu = function() {  
+
+jQuery.fn.initMenu = function() {
     return this.each(function(){
         var theMenu = $(this).get(0);
         $('.acitem', this).hide();
@@ -66,29 +66,29 @@ jQuery.fn.initMenu = function() {
                     $(theElement).slideToggle('normal', function() {
                         if ($(this).is(':visible')) {
                             $(this).prev().addClass('active');
-							
+
                         }
                         else {
                             $(this).prev().removeClass('active');
-                        }    
+                        }
                     });
                     return false;
                 }
                 else {
                     if(theElement.hasClass('acitem') && theElement.is(':visible')) {
                         if($(parent).hasClass('collapsible') || $(parent).hasClass('scroll_box')) {
-                            $('.acitem:visible', parent).first().slideUp('normal', 
+                            $('.acitem:visible', parent).first().slideUp('normal',
                             function() {
                                 $(this).prev().removeClass('active');
 								//alert('1');
                             }
-							
+
                         );
-                        return false;  
+                        return false;
                     }
                     return false;
                 }
-                if(theElement.hasClass('acitem') && !theElement.is(':visible')) {         
+                if(theElement.hasClass('acitem') && !theElement.is(':visible')) {
                     $('.acitem:visible', parent).first().slideUp('normal', function() {
                         $(this).prev().removeClass('active');
 						//alert('1');
@@ -135,16 +135,15 @@ jQuery.fn.initMenu = function() {
       }else{
         appendHtml = menuTempalte.replace('{menu.id}',menu.id);
         appendHtml = appendHtml.replace('{menu.title}',menu.title);
-        appendHtml = appendHtml.replace('{menu.entry}',bg.getContextPath()+menu.entry);
+        appendHtml = appendHtml.replace('{menu.entry}',menu.entry);
         jqueryElem.append(appendHtml);
       }
     }
   }
 
-  function displayAppAndMenus(apps,menus){
-    addApps(apps,jQuery('#app_nav_bar'));
+  function displayAppAndMenus(menus){
     addMenus(menus,jQuery('#menu_ul'));
-  
+
     jQuery(function() {
         jQuery("ul.menu li a.p_1").click(function() {
           jQuery("ul.menu li.current").removeClass('current');

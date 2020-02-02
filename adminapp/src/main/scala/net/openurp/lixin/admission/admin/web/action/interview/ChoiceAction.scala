@@ -32,4 +32,5 @@ class ChoiceAction extends MSSUEntitySupport[InterviewChoice] {
     put("majors", entityDao.getAll(classOf[Major]))
     put("batches", entityDao.getAll(classOf[Batch]))
   }
+
 }

@@ -20,6 +20,7 @@ package net.openurp.lixin.admission.web
 
 import org.beangle.data.dao.EntityDao
 import org.beangle.webmvc.api.action.ActionSupport
+import org.beangle.webmvc.api.context.ActionContext
 import org.beangle.webmvc.api.view.View
 
 abstract class MSSUSupport extends ActionSupport {
@@ -32,5 +33,6 @@ abstract class MSSUSupport extends ActionSupport {
   }
 
   protected def indexSetting(): Unit = {
+    put("this_url",ActionContext.current.request.getRequestURI)
   }
 }

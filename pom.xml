@@ -8,9 +8,13 @@
   </parent>
   <groupId>net.openurp.lixin.admission</groupId>
   <artifactId>lixin-admission-parent</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Adminssion Parent</name>
+
+  <properties>
+    <openurp.app.version>0.1.27-SNAPSHOT</openurp.app.version>
+  </properties>
 
   <modules>
     <module>core</module>
