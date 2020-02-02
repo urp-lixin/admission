@@ -4,7 +4,7 @@
   <parent>
     <groupId>net.openurp.lixin.admission</groupId>
     <artifactId>lixin-admission-parent</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
   </parent>
   <artifactId>lixin-admission-core</artifactId>
   <packaging>jar</packaging>
@@ -13,28 +13,28 @@
   <dependencies>
     <dependency>
       <groupId>org.beangle.data</groupId>
-      <artifactId>beangle-data-model_2.12</artifactId>
+      <artifactId>beangle-data-model_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.data</groupId>
-      <artifactId>beangle-data-orm_2.12</artifactId>
+      <artifactId>beangle-data-orm_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.data</groupId>
-      <artifactId>beangle-data-transfer_2.12</artifactId>
+      <artifactId>beangle-data-transfer_2.13</artifactId>
       <version>${beangle.data.version}</version>
     </dependency>
     <dependency>
       <groupId>org.beangle.webmvc</groupId>
-      <artifactId>beangle-webmvc-entity-plugin_2.12</artifactId>
+      <artifactId>beangle-webmvc-entity-plugin_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.cdi</groupId>
-      <artifactId>beangle-cdi-api_2.12</artifactId>
+      <artifactId>beangle-cdi-api_2.13</artifactId>
     </dependency>
     <dependency>
       <groupId>org.beangle.cache</groupId>
-      <artifactId>beangle-cache-api_2.12</artifactId>
+      <artifactId>beangle-cache-api_2.13</artifactId>
     </dependency>
   </dependencies>
 </project>

@@ -4,11 +4,11 @@
   <parent>
     <groupId>org.openurp</groupId>
     <artifactId>openurp-parent</artifactId>
-    <version>0.2.9</version>
+    <version>0.3.15</version>
   </parent>
   <groupId>net.openurp.lixin.admission</groupId>
   <artifactId>lixin-admission-parent</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>pom</packaging>
   <name>Adminssion Parent</name>
 
